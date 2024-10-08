@@ -16,7 +16,7 @@
   --r-heading-text-transform: none;
   --r-heading-font-weight: normal;
   --r-heading1-size: 3.5rem;
-  --r-heading2-size: 2.5rem;
+  --r-heading2-size: 3rem;
   --r-heading3-size: 1.55rem;
   --r-heading4-size: 1rem;
   --r-code-font: monospace;
@@ -89,7 +89,7 @@ p:last-child, ul:last-child, ol:last-child, li:last-child {
  *********************************************/
  .aks-title-holder {
   background-color: rgba(255,255,255,.6);
-  padding: 50px;
+  padding: 5vw;
   height: 100vh;
   width: 40%;
  }
