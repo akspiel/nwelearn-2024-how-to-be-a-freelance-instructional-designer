@@ -15,8 +15,8 @@
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
   --r-heading-font-weight: normal;
-  --r-heading1-size: 3.77rem;
-  --r-heading2-size: 2.11rem;
+  --r-heading1-size: 3.5rem;
+  --r-heading2-size: 2.5rem;
   --r-heading3-size: 1.55rem;
   --r-heading4-size: 1rem;
   --r-code-font: monospace;
@@ -80,6 +80,7 @@ p {
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
   margin-top: 0;
 }
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child,
 p:last-child, ul:last-child, ol:last-child, li:last-child {
   margin-bottom: 0;
 }
