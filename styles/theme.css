@@ -6,11 +6,11 @@
  *********************************************/
 :root {
   --r-background-color: #fff;
-  --r-main-font: "Mulish", sans-serif;
+  --r-main-font: "Figtree", sans-serif;
   --r-main-font-size: 40px;
-  --r-main-color: #333;
+  --r-main-color: #000;
   --r-block-margin: 20px;
-  --r-heading-color: #333;
+  --r-heading-color: #000;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
@@ -26,6 +26,9 @@
   --r-selection-background-color: rgba(0, 0, 0, 0.99);
   --r-selection-color: #fff;
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 html {
   font-family: var(--r-main-font);
   font-size: var(--r-main-font-size);
@@ -33,7 +36,9 @@ html {
   font-weight: normal;
   color: var(--r-main-color);
 }
-
+.reveal .slides {
+  text-align: left;
+}
 .reveal-viewport {
   background: #fff;
   background-color: var(--r-background-color);
@@ -78,6 +83,15 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
 p:last-child, ul:last-child, ol:last-child, li:last-child {
   margin-bottom: 0;
 }
+/*********************************************
+ * TITLE SLIDES
+ *********************************************/
+ .aks-title-holder {
+  background-color: rgba(255,255,255,.6);
+  padding: 50px;
+  height: 100vh;
+  width: 40%;
+ }
 /*********************************************
  * MEDIA
  *********************************************/
