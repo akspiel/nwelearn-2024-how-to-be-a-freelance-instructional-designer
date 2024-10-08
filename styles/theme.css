@@ -39,6 +39,9 @@ html {
 .reveal .slides {
   text-align: left;
 }
+.reveal .slides > section {
+  height: 100vh;
+}
 .reveal-viewport {
   background: #fff;
   background-color: var(--r-background-color);
