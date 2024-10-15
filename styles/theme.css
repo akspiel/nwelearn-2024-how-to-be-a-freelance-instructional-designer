@@ -172,9 +172,53 @@ ol {
   display: flex;
 }
 /*********************************************
+ * MEDIA
+ *********************************************/
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+.reveal svg {
+  vertical-align: middle;
+}
+figure {
+  margin: 0;
+}
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: var(--r-link-color);
+  transition: all 0.2s;
+}
+.reveal cite a {
+  color: inherit;
+}
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+}
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: var(--r-link-color);
+}
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: var(--r-background-color);
+  }
+}
+/*********************************************
  * TITLE SLIDES
  *********************************************/
-.aks-title-holder {
+ .aks-title-holder {
   background-color: rgba(255,255,255,.6);
   padding: var(--section-spacing);
   height: 100vh;
@@ -206,47 +250,6 @@ ol {
 .aks-subtitle-holder svg {
   fill: var(--color-orange);
   opacity: .6;
-}
-/*********************************************
- * MEDIA
- *********************************************/
-/* Ensure certain elements are never larger than the slide itself */
-.reveal img,
-.reveal video,
-.reveal iframe {
-  max-width: 100%;
-  max-height: 100%;
-  vertical-align: middle;
-}
-.reveal svg {
-  vertical-align: middle;
-}
-/*********************************************
- * LINKS
- *********************************************/
-.reveal a {
-  color: var(--r-link-color);
-  transition: all 0.2s;
-}
-.reveal cite a {
-  color: inherit;
-}
-.reveal a:hover {
-  color: var(--r-link-color-hover);
-}
-/*********************************************
- * NAVIGATION CONTROLS
- *********************************************/
-.reveal .controls {
-  color: var(--r-link-color);
-}
-/*********************************************
- * PRINT BACKGROUND
- *********************************************/
-@media print {
-  .backgrounds {
-    background-color: var(--r-background-color);
-  }
 }
 /*********************************************
  * SPECIFIC SLIDES
@@ -413,13 +416,6 @@ ol {
 .for-you[data-fragment="2"] .aks-text-holder.aks-display-flex .aks-single .aks-display-flex > div:nth-child(3) {
   width: 300px;
 }
-.starting-out .aks-text-holder {
-  padding: calc(2 * var(--section-spacing));
-  background-color: rgba(255,255,255,.8);
-  width: 700px;
-  height: 100%;
-  margin-left: var(--section-spacing)
-}
 .aks-bullet-head {
   font-size: var(--r-heading3-size);
   font-weight: 700;
@@ -563,27 +559,46 @@ ol {
 .aks-polar-wrapper .aks-single img {
   max-height: 70vh;
 }
+.aks-polar-wrapper figcaption {
+  font-family: "Shadows Into Light", cursive;
+  font-size: .8rem;
+  padding: 15px 10px 5px 10px;
+  text-align: center;
+}
 .my-background .aks-display-grid,
-.skills .aks-display-grid {
+.skills .aks-display-grid,
+.starting-out .aks-display-grid,
+.project-manage .aks-display-grid {
   grid-template-columns: 1fr 1fr;
 }
 .my-background .aks-box {
   margin: 10px;
   background-color: whitesmoke;
 }
-.skills-stack {
+.skills-stack,
+.starting-stack {
   margin: 10px 10px 10px 0;
 }
 .skills .aks-box {
   margin: 10px;
   background-color: var(--color-salmon-lighter);
 }
-.skills-stack .aks-single {
+.starting-out .aks-box {
+  margin: 10px;
+  background-color: var(--color-link-lighter);
+}
+.project-manage .aks-box {
+  margin: 10px;
+  background-color: var(--color-orange-lighter);
+}
+.skills-stack .aks-single,
+.starting-stack .aks-single {
   position: relative;
   padding-bottom: 100%;
   width: 100%;
 }
-.skills-stack .aks-single img {
+.skills-stack .aks-single img,
+.starting-stack .aks-single img {
   position: absolute;
   top: 0;
   left: 0;
@@ -593,4 +608,90 @@ ol {
 }
 .skills-prof .aks-box {
   background-color: var(--color-link-lighter);
+}
+.aks-single.aks-before-after {
+  height: calc(100vh - 20px);
+  padding: 5vw 0;
+}
+.aks-single.aks-before-after figure {
+  text-align: center;
+}
+.aks-single.aks-before-after figure:first-child {
+  border-bottom: 2px dashed #ddd;
+}
+.aks-single.aks-before-after img {
+  position: unset;
+  width: 75%;
+  height: auto;
+}
+.aks-before-after-writing img {
+  width: 80%;
+}
+.aks-draw-arrow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: calc(40% - 100px);
+  left: 0;
+  transform: rotate(20deg);
+}
+.aks-before-after-writing .aks-draw-arrow {
+  left: -2%;
+  top: calc(45% - 100px);
+}
+.aks-draw-arrow svg {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.aks-draw-arrow svg .draw-arrow {
+  stroke-width: 5;
+  stroke: var(--color-salmon);
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+.aks-draw-arrow.visible svg .draw-arrow {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: draw;
+}
+.aks-draw-arrow svg .draw-arrow.tail-1 {
+  animation-delay: 0.5s;
+}
+.aks-draw-arrow svg .draw-arrow.tail-2 {
+  animation-delay: 0.7s;
+}
+@-webkit-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.confirmation-flex {
+  gap: 10px;
+  overflow: hidden;
+  margin: 10px;
+}
+.confirmation-flex .aks-pic-holder {
+  flex: 1;
+  padding: 2vw;
+  text-align: center;
+}
+.confirmation-flex .aks-pic-holder:nth-child(1) {
+  background-color: var(--color-salmon);
+}
+.confirmation-flex .aks-pic-holder:nth-child(2) {
+  background-color: var(--color-link);
+}
+.confirmation-flex .aks-pic-holder.fragment {
+  margin-right: calc(-100% - 10px);
+  transition: all .3s;
+}
+.confirmation-flex .aks-pic-holder.visible {
+  margin-right: 0;
 }
