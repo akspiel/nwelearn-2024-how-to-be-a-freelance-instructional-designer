@@ -582,7 +582,8 @@ figure {
 .my-background .aks-display-grid,
 .skills .aks-display-grid,
 .starting-out .aks-display-grid,
-.project-manage .aks-display-grid {
+.project-manage .aks-display-grid,
+.tricky-situations .aks-display-grid {
   grid-template-columns: 1fr 1fr;
 }
 .my-background .aks-box {
@@ -605,14 +606,20 @@ figure {
   margin: 10px;
   background-color: var(--color-orange-lighter);
 }
+.tricky-situations .aks-box {
+  margin: 10px;
+  background-color: var(--color-salmon-lighter);
+}
 .skills-stack .aks-single:not(.aks-single-polar),
-.starting-stack .aks-single {
+.starting-stack .aks-single,
+.tricky-situations .aks-single {
   position: relative;
   padding-bottom: 100%;
   width: 100%;
 }
 .skills-stack .aks-single:not(.aks-single-polar) img,
-.starting-stack .aks-single img {
+.starting-stack .aks-single img,
+.tricky-situations .aks-single img {
   position: absolute;
   top: 0;
   left: 0;
@@ -728,6 +735,9 @@ figure {
   top: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .r-stack .aks-single .aks-figure img {
   object-fit: contain;
