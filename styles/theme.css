@@ -36,7 +36,7 @@
   --color-link: #3b6c88;
   --color-link-hover: #77acbd;
   --color-link-lighter: #F1F6F8;
-  --section-spacing: 2.5vw;
+  --section-spacing: 4vw;
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -259,7 +259,7 @@ figure {
   background-color: rgba(0, 45, 74, .5);
   color: #fff;
   height: 100%;
-  width: 50%;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -350,6 +350,9 @@ figure {
 .for-you .aks-text-holder.aks-display-flex .aks-single {
   padding: var(--section-spacing);
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .for-you .aks-text-holder.aks-display-flex > .aks-single:first-child {
   background-color: var(--color-salmon-light);
@@ -365,15 +368,14 @@ figure {
 }
 .for-you .aks-text-holder.aks-display-flex > .aks-single:nth-child(3) .aks-pic-holder {
   position: absolute;
-  right: 2vw;
-  top: 0;
-  height: calc(100% - 80px);
+  right: 10px;
+  top: 2vw;
 }
 .for-you .aks-text-holder.aks-display-flex > .aks-single:nth-child(3) cite {
   position: absolute;
-  bottom: var(--section-spacing);
+  bottom: calc(var(--section-spacing) + 25px);
   left: 0;
-  right: 0;
+  right: 10px;
 }
 .for-you .aks-text-holder.aks-display-flex > .aks-single.visible:nth-child(2) {
   margin-right: 0;
@@ -390,17 +392,16 @@ figure {
 }
 .for-you .aks-text-holder.aks-display-flex .aks-single > p {
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .for-you .aks-text-holder.aks-display-flex .aks-single .aks-display-flex {
   flex-direction: column;
-  margin-top: 2rem;
 }
 .for-you .aks-text-holder.aks-display-flex .aks-single .aks-display-flex > div:nth-child(2) {
   font-size: 2rem;
 }
 .for-you .aks-text-holder.aks-display-flex .aks-single .aks-display-flex > div:nth-child(3) {
-  width: 380px;
+  width: 300px;
   margin: 0 auto;
 }
 .for-you[data-fragment="2"] .aks-text-holder.aks-display-flex .aks-single > p {
