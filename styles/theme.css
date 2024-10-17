@@ -746,3 +746,6 @@ figure {
   height: auto;
   position: unset;
 }
+.reveal .fragment.grow-up-down.current-fragment {
+  transform: scale(2.1);
+}
